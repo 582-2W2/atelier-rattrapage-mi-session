@@ -1,0 +1,210 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Propriétés personnalisées contenant les couleurs des messages de UI */
+:root {
+  --succes: #090;
+  --info: rgb(0, 53, 103);
+  --avertissement: rgb(188, 135, 37);
+  --erreur: #900;
+}
+
+html {
+  height: 100vh;
+  font-size: clamp(12px, 0.5rem + 1vw, 24px);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem;
+  font-size: 1.5rem;
+}
+
+main {
+  margin-bottom: 3rem;
+}
+
+/* Le formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+/* Les champs du formulaire */
+form .champs-formulaire {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chaque champ de formulaire */
+form .champ {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+form input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #bababa;
+  border-radius: 0.25rem;
+  font-size: inherit;
+}
+
+/* Les boutons du formulaire */
+form .boutons-formulaire {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.boutons-formulaire input {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+/* Effet sur les boutons lorsque survolé/actif */
+.boutons-formulaire input:hover,
+.boutons-formulaire input:active {
+  box-shadow: 0 0 1rem 1px rgba(0, 0, 0, 0.5);
+  translate: 0 -0.15rem;
+  scale: 1.1;
+}
+
+/* Les couleurs des boutons et des divers états du message de UI */
+.erreur {
+  color: white;
+}
+
+.avertissement {
+  color: white;
+}
+
+.info {
+  color: white;
+}
+
+.succes {
+  color: white;
+}
+
+
+/* Les messages de UI ("toast") */
+
+#cc-toast {
+  /* La case à cocher est cachée */
+
+}
+
+/* Le texte du message (balise LABEL) */
+.texte-toast {
+  position: absolute;
+  top: 3rem;
+  /* Centrer le message et le déplacer hors du viewport (vers le haut) */
+
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  padding: 0.5rem 1rem 0.5rem 3.5rem;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(61, 121, 128, 0.5);
+  z-index: 100;
+  animation: anim-toast 8s;
+}
+
+/* Le message est enlevé de l'affichage lorsque la case à cocher est 
+cochée, et donc lorsque l'élément label lui-même est cliqué */
+#cc-toast:checked + .texte-toast {
+  display: none;
+}
+
+/* Icône associé au type de message */
+.texte-toast::before {
+  
+}
+
+/* Message d'erreur */
+.texte-toast.erreur::before {
+  /* Icône Unicode : 29BB */
+  
+  /* Couleur d'arrière plan */
+  
+}
+
+.texte-toast.erreur::after {
+  /* Message : "Hum, bien essayé, mais non !" */
+}
+
+/* Message d'avertissement */
+.texte-toast.avertissement::before {
+  /* Icône Unicode : 26A0 */
+  
+  /* Couleur d'arrière plan */
+}
+
+.texte-toast.avertissement::after {
+  /* Message :  "Attention, il y a un problème" */
+}
+
+/* Message d'information */
+.texte-toast.info::before {
+  /* Icône Unicode : 1F6C8 */
+  
+  /* Couleur d'arrière plan */
+}
+
+.texte-toast.info::after {
+  /* Message :  "Allo Untel Untel" */
+}
+
+/* Message de succès */
+.texte-toast.succes::before {
+  /* Icône Unicode : 2713 */
+  
+  /* Couleur d'arrière plan */
+}
+
+.texte-toast.succes::after {
+  /* Message :  "OK, c'est fait !" */
+}
+
+/* Animation des messages UI */
+@keyframes anim-toast {
+  /* Arrive en trombe */
+
+  /* Reste visible la grosse majorité du temps de l'animation */
+
+  /* Et repart tranquillement */
+
+}
+
+/* Ajustements pour plus grand écran */
+@media screen and (min-width: 960px) {
+  /* Champs de formulaire en rangée avec gouttière */
+  
+
+  /* Chaque champ peut s'étendre pour prendre l'espace disponible */
+  
+
+  /* Les boutons de formulaire en rangée, alignés à droite, 
+  avec gouttières et marges adéquates */
+  
+}
