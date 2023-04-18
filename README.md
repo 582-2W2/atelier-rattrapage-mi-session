@@ -2,7 +2,7 @@
 
 >On y explore une partie de la matière vue jusqu'à la semaine 9. Mais surtout on réfléchit à résoudre un problème réaliste en appliquant les techniques adéquates apprises dans le cours.
 
-## Concepts utilisés : 
+## Concepts mis en pratique : 
 1. `CSS` : Mise en page adaptative
 2. `CSS` : Effets de transition
 3. `CSS` : Typographie fluide
